@@ -1,4 +1,4 @@
-# Ders Defteri — çalışma kuralları
+# Müzik Defterim — çalışma kuralları
 
 ## Kod düzeni
 - Her dosya tek bir iş yapsın. Yeni özellik mevcut modüle uymuyorsa yeni dosya/modül aç.
