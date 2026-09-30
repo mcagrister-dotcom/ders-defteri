@@ -204,7 +204,7 @@ export async function renderPortal(code) {
 
   view.innerHTML = `
     <header class="portal-head">
-      <div class="brand"><span class="brand-mark">𝄞</span><span class="brand-name">Müzik Defterim</span></div>
+      <div class="brand"><span class="brand-mark">𝄞</span><span class="brand-name">Muzikurs</span></div>
       <div class="seg" role="tablist">
         <button role="tab" aria-selected="${portal.tab === 'student'}" data-tab="student">Öğrenci</button>
         <button role="tab" aria-selected="${portal.tab === 'parent'}" data-tab="parent">Veli</button>
