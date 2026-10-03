@@ -45,7 +45,7 @@ export function renderSettings() {
   };
   view.querySelector('[data-action=export]').onclick = () => {
     const blob = new Blob([JSON.stringify(db, null, 2)], { type: 'application/json' });
-    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `mesk-${today()}.json` });
+    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `muzikurs-${today()}.json` });
     a.click(); URL.revokeObjectURL(a.href);
   };
   document.getElementById('import').onchange = async e => {
