@@ -70,6 +70,7 @@ a { color: inherit; }
 .brand { display: flex; align-items: center; gap: 10px; padding: 4px 10px 22px; }
 .brand-mark { display: block; width: 30px; height: 30px; border-radius: 8px; }
 .brand-name { font-family: Fraunces, serif; font-size: 20px; font-weight: 650; }
+.topbar { display: none; } /* yalnızca telefonda; masaüstünde logo yan menüde */
 .nav a {
   display: flex; align-items: center; gap: 12px;
   padding: 9px 12px; border-radius: 10px; text-decoration: none; color: var(--ink-2); font-weight: 500;
@@ -77,12 +78,12 @@ a { color: inherit; }
 .nav a:hover { background: var(--surface-2); color: var(--ink); }
 .nav a.active { background: var(--accent-soft); color: var(--accent); }
 .nav .ico { width: 18px; text-align: center; }
-.view { padding: 32px 40px 80px; max-width: 1180px; width: 100%; }
+.view { padding: 32px 40px 80px; max-width: 1180px; width: 100%; min-width: 0; }
 
 .page-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
 .page-head p { margin: 4px 0 0; }
 .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-.grid { display: grid; gap: 16px; }
+.grid { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); } /* tek sütunda içerik genişliğine göre şişmesin */
 .grid-2 { grid-template-columns: 1.4fr 1fr; }
 .stats { grid-template-columns: repeat(4, 1fr); margin-bottom: 20px; }
 
@@ -212,7 +213,7 @@ dialog::backdrop { background: rgba(20, 15, 10, .45); }
 a.btn.primary-link { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 
 /* öğrenci & veli sayfası */
-body.portal .nav { display: none; }
+body.portal .nav, body.portal .topbar { display: none; }
 body.portal .app { grid-template-columns: 1fr; }
 body.portal .view { max-width: 720px; margin: 0 auto; padding: 20px 16px 60px; }
 .portal-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
@@ -271,19 +272,26 @@ body.portal .view { max-width: 720px; margin: 0 auto; padding: 20px 16px 60px; }
 
 /* responsive */
 @media (max-width: 1000px) {
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .grid-2 { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-2 { grid-template-columns: minmax(0, 1fr); }
   .week { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .day { min-height: 0; }
 }
 @media (max-width: 720px) {
-  .app { grid-template-columns: 1fr; }
+  .app { grid-template-columns: minmax(0, 1fr); }
   .nav {
     position: fixed; bottom: 0; top: auto; left: 0; right: 0; height: auto; z-index: 10;
     flex-direction: row; justify-content: space-around; padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
     border-right: 0; border-top: 1px solid var(--line);
   }
   .nav .brand { display: none; }
+  .topbar {
+    display: flex; align-items: center; position: sticky; top: 0; z-index: 9;
+    padding: calc(10px + env(safe-area-inset-top)) 16px 10px;
+    background: var(--surface); border-bottom: 1px solid var(--line);
+  }
+  .topbar .brand { padding: 0; }
+  .topbar .brand-name { font-size: 18px; }
   .portal-head .brand-name { font-size: 17px; }
   .nav a { flex-direction: column; gap: 0; font-size: 11px; padding: 6px 8px; }
   .nav .ico { font-size: 17px; }
