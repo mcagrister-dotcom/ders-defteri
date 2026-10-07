@@ -5,9 +5,9 @@
   --ink: #221d17;
   --ink-2: #6b6255;
   --line: #e2d9c8;
-  --accent: #9c3d2b;
+  --accent: #146066;
   --accent-ink: #fff;
-  --accent-soft: #f3e0d8;
+  --accent-soft: #d6eaeb;
   --ok: #3f7a4a;
   --ok-soft: #e0eedf;
   --warn: #a8741a;
@@ -28,9 +28,9 @@
     --ink: #f1eadf;
     --ink-2: #a89d8c;
     --line: #3a3328;
-    --accent: #e0826a;
-    --accent-ink: #1b120e;
-    --accent-soft: #3d2620;
+    --accent: #5ec2c6;
+    --accent-ink: #062123;
+    --accent-soft: #163b3f;
     --ok: #86c28f;
     --ok-soft: #22321f;
     --warn: #e0b35c;
@@ -68,7 +68,7 @@ a { color: inherit; }
   padding: 20px 12px; border-right: 1px solid var(--line); background: var(--surface);
 }
 .brand { display: flex; align-items: center; gap: 10px; padding: 4px 10px 22px; }
-.brand-mark { font-size: 28px; color: var(--accent); line-height: 1; }
+.brand-mark { display: block; width: 30px; height: 30px; border-radius: 8px; }
 .brand-name { font-family: Fraunces, serif; font-size: 20px; font-weight: 650; }
 .nav a {
   display: flex; align-items: center; gap: 12px;
