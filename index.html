@@ -3,40 +3,168 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Muzikurs</title>
+  <title>Muzikurs — özel çalgı öğretmenleri için ders defteri</title>
+  <meta name="description" content="Ders programı, ödemeler ve haftalık ödev takibi tek yerde. Öğrenci çalışma kaydını gönderir, veli bakiyeyi görür. Ud, bağlama, keman, piyano ve 40 çalgı için." />
+  <meta name="theme-color" content="#1E3FC9" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231E3FC9'/><text x='32' y='46' font-size='40' text-anchor='middle' fill='white'>𝄞</text></svg>" />
+  <script>if (location.hash.startsWith('#/')) location.replace('app/' + location.hash);</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="landing/landing.css" />
 </head>
 <body>
-  <div class="app">
-    <nav class="nav">
-      <div class="brand">
-        <span class="brand-mark">𝄞</span>
-        <span class="brand-name">Muzikurs</span>
-      </div>
-      <a href="#/" data-route="dashboard"><span class="ico">◐</span><span>Pano</span></a>
-      <a href="#/takvim" data-route="calendar"><span class="ico">▦</span><span>Takvim</span></a>
-      <a href="#/ogrenciler" data-route="students"><span class="ico">♪</span><span>Öğrenciler</span></a>
-      <a href="#/odemeler" data-route="payments"><span class="ico">₺</span><span>Ödemeler</span></a>
-      <a href="#/ayarlar" data-route="settings"><span class="ico">⚙</span><span>Ayarlar</span></a>
+  <header class="top">
+    <a class="logo" href="./" aria-label="Muzikurs ana sayfa"><span class="logo-mark" aria-hidden="true">𝄞</span>Muzikurs</a>
+    <nav class="top-nav" aria-label="Sayfa bölümleri">
+      <a href="#nasil">Nasıl çalışır</a>
+      <a href="#kim-ne-gorur">Kim ne görür</a>
+      <a href="#sinirlar">Veriler</a>
     </nav>
-    <main id="view" class="view"></main>
-  </div>
+    <a class="btn btn-small" href="app/">Uygulamayı aç</a>
+  </header>
 
-  <dialog id="modal">
-    <form method="dialog" id="modal-form">
-      <header class="modal-head">
-        <h2 id="modal-title"></h2>
-        <button type="button" class="icon-btn" data-close aria-label="Kapat">✕</button>
-      </header>
-      <div id="modal-body" class="modal-body"></div>
-      <footer class="modal-foot" id="modal-foot"></footer>
-    </form>
-  </dialog>
+  <main>
+    <!-- Hero: haftanın portesi -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Özel çalgı öğretmenleri için</p>
+        <h1>Ders bir saat sürer. <em>Çalışma bütün hafta.</em></h1>
+        <div class="hero-side">
+        <p class="lead">Programı, ödemeleri ve ödevi tek defterde tut. Öğrenci çalıştığını kayıtla gösterir, veli tek bir bağlantıdan bakiyeyi ve ödevi görür.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="app/">Hesap açmadan dene</a>
+          <a class="btn btn-ghost" href="#nasil">Nasıl çalışır</a>
+        </div>
+        <p class="fine">Kayıt yok, kurulum yok. Telefonda ve bilgisayarda tarayıcıdan açılır.</p>
+        </div>
+      </div>
 
-  <div id="toast" class="toast" role="status"></div>
+      <figure class="week" aria-label="Bir haftanın akışı: pazartesi ders, çarşamba öğrenci kaydı, perşembe geri bildirim, cuma ikinci kayıt, cumartesi ödeme">
+        <ol class="staff">
+          <li class="ev ev-lesson" data-day="Pzt" style="--day:1; --step:0; --lift:3">
+            <span class="note note-whole" aria-hidden="true"></span>
+            <span class="ev-text"><b>Ders · 17:00</b>Deniz, ud. Hicaz taksim, ilk iki satır ödev.</span>
+          </li>
+          <li class="ev ev-rec" data-day="Çar" style="--day:3; --step:1; --lift:1">
+            <span class="note" aria-hidden="true"></span>
+            <span class="ev-text"><b>Kayıt geldi · 0:48</b>
+              <span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            </span>
+          </li>
+          <li class="ev ev-fb" data-day="Per" style="--day:4; --step:2; --lift:4">
+            <span class="note" aria-hidden="true"></span>
+            <span class="ev-text"><b>Geri bildirim</b>İkinci satır temiz. Geçişi yavaş çalış.</span>
+          </li>
+          <li class="ev ev-rec" data-day="Cum" style="--day:5; --step:3; --lift:2">
+            <span class="note" aria-hidden="true"></span>
+            <span class="ev-text"><b>Kayıt geldi · 1:12</b>Tamamı, metronomla.</span>
+          </li>
+          <li class="ev ev-pay" data-day="Cmt" style="--day:6; --step:4; --lift:0">
+            <span class="note note-rest" aria-hidden="true"></span>
+            <span class="ev-text"><b>Ödeme alındı</b>Eylül, 4 ders.</span>
+          </li>
+        </ol>
+        <div class="days" aria-hidden="true">
+          <span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cmt</span><span>Paz</span>
+        </div>
+        <figcaption class="mono">Örnek bir hafta · Pzt ders, Çar–Cum çalışma</figcaption>
+      </figure>
+    </section>
 
-  <script type="module" src="js/router.js"></script>
+    <!-- Çalgılar -->
+    <section class="instruments" aria-label="Desteklenen çalgılar">
+      <p class="mono">40 çalgı ve ses türü</p>
+      <p class="inst-line">
+        <span class="trad">Ud</span> <span class="trad">Bağlama</span> <span class="trad">Kanun</span> <span class="trad">Ney</span> <span class="trad">Tanbur</span> <span class="trad">Klasik kemençe</span> <span class="trad">Kaval</span> <span class="trad">Darbuka</span>
+        <span>Piyano</span> <span>Keman</span> <span>Klasik gitar</span> <span>Çello</span> <span>Flüt</span> <span>Saksafon</span> <span>Bateri</span>
+        <span class="voice">Türk müziği ses eğitimi</span> <span class="voice">Şan</span>
+      </p>
+      <p class="legend mono"><span class="trad">geleneksel Türk çalgıları</span><span>klasik ve Batı çalgıları</span><span class="voice">ses eğitimi</span></p>
+    </section>
+
+    <!-- Akış: gerçek bir sıra -->
+    <section id="nasil" class="flow">
+      <h2>Ödev, ders arasında da öğretmenin gözünün önünde</h2>
+      <ol class="steps">
+        <li>
+          <h3>Ödevi yaz</h3>
+          <p>Dersten sonra ödevi öğrencinin kartına gir. Hazır mesajla WhatsApp'tan da gönderebilirsin.</p>
+        </li>
+        <li>
+          <h3>Bağlantıyı paylaş</h3>
+          <p>Öğrenciye özel bir bağlantı oluşur. Uygulama yüklemeden açılır, ödev ve ders saatleri orada durur.</p>
+        </li>
+        <li>
+          <h3>Öğrenci kaydı gönderir</h3>
+          <p>Telefondan ses ya da görüntülü kayıt alır. Çalgı sesi bastırılmasın diye tarayıcının konuşma filtreleri kapalıdır. Kayıt WhatsApp ile sana gider.</p>
+        </li>
+        <li>
+          <h3>Geri bildirimi ver</h3>
+          <p>Kaydı dinle, notunu yaz. Öğrenci ve veli geri bildirimi aynı sayfada görür.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Kim ne görür -->
+    <section id="kim-ne-gorur" class="roles">
+      <h2>Aynı defter, üç farklı bakış</h2>
+      <div class="role-grid">
+        <article class="role role-teacher">
+          <p class="mono">Öğretmen</p>
+          <h3>Programı ve parayı bilirsin</h3>
+          <ul>
+            <li>Haftalık takvim; tekrarlayan dersi tek tıkla haftaya yay</li>
+            <li>Yapıldı, iptal, gelmedi durumları; ücret buna göre hesaplanır</li>
+            <li>Kimin ne kadar borcu var, ay ay ödeme listesi</li>
+            <li>Hafta içi ödev panosu: kim kayıt gönderdi, kim göndermedi</li>
+          </ul>
+        </article>
+        <article class="role role-student">
+          <p class="mono">Öğrenci</p>
+          <h3>Ne çalışacağını bilir</h3>
+          <ul>
+            <li>Güncel ödev ve bir sonraki ders saati</li>
+            <li>Günlük çalışma süresi, seri ve haftalık hedef</li>
+            <li>Ses ya da görüntü kaydı alıp tek dokunuşla öğretmene gönderme</li>
+          </ul>
+        </article>
+        <article class="role role-parent">
+          <p class="mono">Veli</p>
+          <h3>Ders ve ücret net görünür</h3>
+          <ul>
+            <li>Yapılan ve yaklaşan dersler</li>
+            <li>Güncel bakiye; öğretmen isterse gizleyebilir</li>
+            <li>Haftalık çalışma raporu, WhatsApp'tan paylaşılabilir</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Dürüst sınırlar -->
+    <section id="sinirlar" class="limits">
+      <div class="limits-inner">
+        <h2>Verilerin senin cihazında</h2>
+        <p>Hesap ve şifre yok. Öğrenci, ders ve ödeme kayıtları yalnızca kullandığın tarayıcıda saklanır; bize gönderilmez. Başka cihaza geçerken <strong>Ayarlar</strong> bölümünden yedeği indirip yüklersin.</p>
+        <p>Öğrenci bağlantısı oluşturulduğu andaki bir özettir. Ödev ya da ders saati değişince yeni bağlantı paylaşırsın.</p>
+      </div>
+    </section>
+
+    <!-- Kapanış -->
+    <section class="closing">
+      <h2>İlk öğrencini eklemek bir dakika</h2>
+      <p>Örnek veriyi yükleyip önce gezinebilir, beğenirsen silip kendi öğrencilerinle başlayabilirsin.</p>
+      <div class="cta-row">
+        <a class="btn btn-light" href="app/">Uygulamayı aç</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a class="logo" href="./"><span class="logo-mark" aria-hidden="true">𝄞</span>Muzikurs</a>
+    <p class="mono">Özel çalgı dersleri için ders defteri</p>
+  </footer>
+
+  <script src="landing/landing.js"></script>
 </body>
 </html>
