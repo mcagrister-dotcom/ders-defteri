@@ -54,10 +54,7 @@ a { color: inherit; }
   display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
   font: 700 1.25rem/1 var(--display); letter-spacing: -0.01em;
 }
-.logo-mark {
-  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px;
-  background: var(--cobalt); color: #fff; font-size: 1.25rem; font-weight: 400;
-}
+.logo-mark { display: block; width: 34px; height: 34px; border-radius: 9px; }
 .top-nav { display: flex; gap: 22px; margin-left: auto; font-size: 0.95rem; }
 .top-nav a { text-decoration: none; color: var(--muted); }
 .top-nav a:hover { color: var(--ink); }
