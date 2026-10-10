@@ -16,36 +16,38 @@
   <link rel="stylesheet" href="landing/landing.css" />
 </head>
 <body>
-  <header class="top">
-    <a class="logo" href="./" aria-label="Muzikurs ana sayfa"><img class="logo-mark" src="/icon-512.png" width="34" height="34" alt="" />Muzikurs</a>
-    <nav class="top-nav" aria-label="Sayfa bölümleri">
-      <a href="#nasil">Nasıl çalışır</a>
-      <a href="#kim-ne-gorur">Kim ne görür</a>
-      <a href="#sinirlar">Veriler</a>
-    </nav>
-    <a class="btn btn-small" href="app/">Uygulamayı aç</a>
-  </header>
-
   <main>
-    <!-- Hero: haftanın portesi -->
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Özel ders veren müzik öğretmenleri için</p>
-        <h1>Ders bir saat sürer. <em>Çalışma bütün hafta.</em></h1>
-        <div class="hero-side">
-        <p class="lead">Programı, ödemeleri ve ödevi tek defterde tut. Öğrenci çalıştığını kayıtla gösterir, veli tek bir bağlantıdan bakiyeyi ve ödevi görür.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="app/">Hesap açmadan dene</a>
-          <a class="btn btn-ghost" href="#nasil">Nasıl çalışır</a>
-        </div>
-        <p class="fine">Kayıt yok, kurulum yok. Telefonda ve bilgisayarda tarayıcıdan açılır.</p>
+    <!-- Hero: fotoğraf arka plan, üstünde menü ve başlık -->
+    <section class="hero-band">
+      <img class="hero-bg" src="landing/img/ogretmen.jpg" width="1672" height="941" fetchpriority="high" alt="Evinde tablete bakan müzik öğretmeni; arkasında gitar, mikrofon ve piyano var, havada ders, ödev ve ödeme kartları süzülüyor" />
+      <div class="hero-shade" aria-hidden="true"></div>
+      <header class="top">
+        <a class="logo" href="./" aria-label="Muzikurs ana sayfa"><img class="logo-mark" src="/icon-512.png" width="34" height="34" alt="" />Muzikurs</a>
+        <nav class="top-nav" aria-label="Sayfa bölümleri">
+          <a href="#nasil">Nasıl çalışır</a>
+          <a href="#kim-ne-gorur">Kim ne görür</a>
+          <a href="#sinirlar">Veriler</a>
+        </nav>
+        <a class="btn btn-small" href="app/">Uygulamayı aç</a>
+      </header>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Özel ders veren müzik öğretmenleri için</p>
+          <h1>Ders bir saat sürer. <em>Çalışma bütün hafta.</em></h1>
+          <div class="hero-side">
+          <p class="lead">Programı, ödemeleri ve ödevi tek defterde tut. Öğrenci çalıştığını kayıtla gösterir, veli tek bir bağlantıdan bakiyeyi ve ödevi görür.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="app/">Hesap açmadan dene</a>
+            <a class="btn btn-ghost" href="#nasil">Nasıl çalışır</a>
+          </div>
+          <p class="fine">Kayıt yok, kurulum yok. Telefonda ve bilgisayarda tarayıcıdan açılır.</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <figure class="hero-photo">
-        <img src="landing/img/ogretmen.jpg" width="1672" height="941" fetchpriority="high" alt="Evinde tablete bakan müzik öğretmeni; arkasında gitar, mikrofon ve piyano var, havada ders, ödev ve ödeme kartları süzülüyor" />
-      </figure>
-
+    <!-- Haftanın portesi -->
+    <section class="hero">
       <figure class="week" aria-label="Bir haftanın akışı: pazartesi ders, çarşamba öğrenci kaydı, perşembe geri bildirim, cuma ikinci kayıt, cumartesi ödeme">
         <ol class="staff">
           <li class="ev ev-lesson" data-day="Pzt" style="--day:1; --step:0; --lift:3">
