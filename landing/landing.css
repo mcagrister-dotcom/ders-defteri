@@ -93,14 +93,14 @@ a { color: inherit; }
 .hero-shade {
   position: absolute; inset: 0; z-index: -1;
   background:
-    linear-gradient(90deg, rgba(8, 34, 37, 0.9) 0%, rgba(8, 34, 37, 0.74) 40%, rgba(8, 34, 37, 0.14) 72%, rgba(8, 34, 37, 0) 100%),
-    linear-gradient(0deg, rgba(8, 34, 37, 0.5), rgba(8, 34, 37, 0) 38%);
+    linear-gradient(90deg, rgba(8, 34, 37, 0.78) 0%, rgba(8, 34, 37, 0.6) 38%, rgba(8, 34, 37, 0.08) 66%, rgba(8, 34, 37, 0) 100%),
+    linear-gradient(0deg, rgba(8, 34, 37, 0.34), rgba(8, 34, 37, 0) 34%);
 }
 .hero-band .top { width: 100%; }
 .hero-band .top-nav a { color: rgba(255, 255, 255, 0.82); }
 .hero-band .top-nav a:hover { color: #fff; }
 .hero-band .btn-small { background: #fff; color: #0d2a2d; }
-.hero-inner { flex: 1; display: flex; align-items: center; width: 100%; max-width: var(--max); margin: 0 auto; padding: clamp(32px, 6vw, 72px) var(--gutter) clamp(56px, 8vw, 96px); }
+.hero-inner { text-shadow: 0 1px 18px rgba(8, 34, 37, 0.45); flex: 1; display: flex; align-items: center; width: 100%; max-width: var(--max); margin: 0 auto; padding: clamp(32px, 6vw, 72px) var(--gutter) clamp(56px, 8vw, 96px); }
 .hero-band .hero-copy { grid-template-columns: minmax(0, 700px); gap: 20px; }
 .hero-band .eyebrow { color: #8ee9e0; }
 .hero-band .hero-side { align-self: start; }
@@ -233,7 +233,7 @@ h2 { font: 700 clamp(2rem, 4.6vw, 3.5rem)/1.02 var(--display); font-stretch: 85%
   .hero-band { min-height: 0; }
   /* Telefonda kadın üstte görünsün, metin altta koyu zemine otursun */
   .hero-bg { object-position: 60% 20%; }
-  .hero-shade { background: linear-gradient(0deg, rgba(8, 34, 37, 0.94) 0%, rgba(8, 34, 37, 0.84) 52%, rgba(8, 34, 37, 0) 82%), linear-gradient(180deg, rgba(8, 34, 37, 0.55) 0%, rgba(8, 34, 37, 0) 16%); }
+  .hero-shade { background: linear-gradient(0deg, rgba(8, 34, 37, 0.88) 0%, rgba(8, 34, 37, 0.74) 50%, rgba(8, 34, 37, 0) 80%), linear-gradient(180deg, rgba(8, 34, 37, 0.45) 0%, rgba(8, 34, 37, 0) 16%); }
   .hero-inner { align-items: flex-end; padding-top: 280px; padding-bottom: 40px; }
   .top .btn { margin-left: auto; }
   /* Porte dikey bir zaman çizelgesine dönüşür */
